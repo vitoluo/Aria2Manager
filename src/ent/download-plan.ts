@@ -52,10 +52,11 @@ function browserDl(saveAs: boolean) {
   // https://developer.mozilla.org/zh-CN/docs/Glossary/Forbidden_header_name
   // 查看上面两个链接，检查被禁止修改的headers
   const headers: Downloads.DownloadOptionsTypeHeadersItemType[] = []
-  if (data.referer) {
-    headers.push({ name: 'referer', value: data.referer })
-  }
-  // edge暂不能添加user-agent
+
+  // edge暂不能添加user-agent, referer
+  // if (data.referer) {
+  //   headers.push({ name: 'referer', value: data.referer })
+  // }
   // if (data['user-agent']) {
   //   headers.push({ name: 'user-agent', value: data['user-agent'] })
   // }

@@ -22,7 +22,7 @@
     "<all_urls>"
   ],
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["js/vendors.js", "js/commons.js", "js/background.js"]
   },
   "options_ui": {
     "page": "options.html",

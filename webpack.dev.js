@@ -5,7 +5,7 @@ const WebExtPlugin = require('web-ext-plugin')
 
 const config = {
   mode: 'development',
-  devtool: 'inline-cheap-module-source-map',
+  devtool: 'inline-source-map',
   plugins: [new WebExtPlugin({ sourceDir: path.resolve(__dirname, 'dist') })],
 }
 

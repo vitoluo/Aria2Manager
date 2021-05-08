@@ -6,6 +6,7 @@
     },
     "strict": true,
     "moduleResolution": "node",
+    "module": "esnext",
     "target": "es2019",
     "newLine": "lf",
     "sourceMap": true,

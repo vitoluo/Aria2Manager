@@ -50,7 +50,7 @@ function downloadHandler(details: WebRequest.OnHeadersReceivedDetailsType) {
     })
 
     if (judgeDownload(contentDisposition, contentType)) {
-      closeTab(details.tabId, details.originUrl)
+      closeTab(details.tabId)
       downloadInfo.filename = getFilename(details.url, contentDisposition)
       showDownloadPlan(downloadInfo)
       return { cancel: true }
@@ -106,10 +106,13 @@ function judgeDownload(contentDisposition?: string, contentType?: string) {
   return flag
 }
 
-function closeTab(tabId: number, originUrl?: string) {
+function closeTab(tabId: number) {
   browser.tabs.get(tabId).then((tabInfo) => {
-    if (originUrl && tabInfo.url === 'about:blank') {
+    console.log(tabInfo)
+    if (tabInfo.openerTabId && !tabInfo.url?.startsWith('http')) {
       browser.tabs.remove(tabId)
+    } else if (tabInfo.pendingUrl) {
+      browser.tabs.reload(tabId)
     }
   })
 }
@@ -180,8 +183,6 @@ function handleMessage(message: BrowserMessage): void | Promise<any> {
 ;(async function () {
   configData = await Config.getAll()
   aria2 = getAria2(configData)
-  console.log(configData)
-  console.log(aria2)
 })()
 
 browser.runtime.onMessage.addListener(handleMessage)
