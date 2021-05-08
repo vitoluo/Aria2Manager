@@ -18,5 +18,6 @@
 Thumbs.db
 
 # node
+dist/
 node_modules/
 yarn.lock
