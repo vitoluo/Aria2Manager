@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "strict": true,
+    "moduleResolution": "node",
+    "target": "es2019",
+    "newLine": "lf",
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "include": ["src/**/*"]
+}

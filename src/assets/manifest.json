@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Aria2Manager",
+  "version": "1.0.0",
+  "description": "拦截浏览器下载任务到aria2",
+
+  "homepage_url": "https://github.com/vitoluo/Aria2Manager",
+  "author": "vito",
+
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "downloads",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "notifications",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Aria2Manager",
+    "default_popup": "popup.html"
+  }
+}

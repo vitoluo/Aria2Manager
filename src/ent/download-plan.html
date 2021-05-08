@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0 12px;
+        font-size: 14px;
+      }
+      form > div {
+        margin-bottom: 6px;
+      }
+      .form-input {
+        width: calc(100% - 12px);
+      }
+      textarea {
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <div>
+        <label class="form-label" for="url">url: </label>
+        <input class="form-input" id="url" type="text" readonly />
+      </div>
+      <div>
+        <label class="form-label" for="filename">文件名: </label>
+        <input class="form-input" id="filename" type="text" />
+      </div>
+      <div>
+        <label class="form-label" for="referer">referer: </label>
+        <input class="form-input" id="referer" type="text" />
+      </div>
+      <div>
+        <label class="form-label" for="cookie">cookie: </label>
+        <textarea class="form-input" id="cookie"></textarea>
+      </div>
+      <div>
+        <label class="form-label" for="user-agent">user-agent: </label>
+        <textarea class="form-input" id="user-agent"></textarea>
+      </div>
+      <div class="form-btns">
+        <button id="download" type="button">下载</button>
+        <button id="browserDl" type="button">浏览器下载</button>
+        <button id="browserSaveAs" type="button">浏览器另存为</button>
+        <button id="cancel" type="button">取消</button>
+      </div>
+    </form>
+  </body>
+</html>

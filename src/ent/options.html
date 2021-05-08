@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0 12px;
+        font-size: 14px;
+      }
+      form > div {
+        margin-bottom: 6px;
+      }
+      .form-input {
+        width: calc(100% - 12px);
+      }
+      textarea {
+        height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>aria2 version: <label id="aria2Ver"></label></h1>
+    <form>
+      <div>
+        <label class="form-label" for="ariaNgUrl">ariaNgUrl: </label>
+        <input class="form-input" id="ariaNgUrl" type="url" required />
+      </div>
+      <div>
+        <label class="form-label" for="aria2Host">aria2Host: </label>
+        <input class="form-input" id="aria2Host" type="text" required />
+      </div>
+      <div>
+        <label class="form-label" for="aria2Port">aria2Port: </label>
+        <input class="form-input" id="aria2Port" type="number" required />
+      </div>
+      <div>
+        <label class="form-label" for="aria2Secure">aria2Secure: </label>
+        <select class="form-input" id="aria2Secure" required>
+          <option value="false">否</option>
+          <option value="true">是</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label" for="aria2Secret">aria2Secret: </label>
+        <input class="form-input" id="aria2Secret" type="text" />
+      </div>
+      <div>
+        <label class="form-label" for="aria2Path">aria2Path: </label>
+        <input class="form-input" id="aria2Path" type="text" required />
+      </div>
+      <div>
+        <label class="form-label" for="exclMime">排除的MIME: </label>
+        <textarea
+          class="form-input"
+          id="exclMime"
+          placeholder="一行一个"
+        ></textarea>
+      </div>
+      <div class="form-btns"><button id="save" type="button">保存</button></div>
+    </form>
+  </body>
+</html>
